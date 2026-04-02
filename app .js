@@ -10,7 +10,7 @@
    ============================================================ */
 
 
-// ── 1. INIT ──────────────────────────────────────────────────
+// ── 1. INIT
 
 // Set today's date in masthead
 document.getElementById('todayDate').textContent = new Date().toLocaleDateString('en-IN', {
