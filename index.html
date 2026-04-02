@@ -11,14 +11,15 @@
 </head>
 <body>
 
-  <!-- api key bar — key never leaves the browser -->
+  <!-- ── API KEY BAR ── -->
   <div class="api-bar">
     <label>Anthropic API Key</label>
-    <input type="password" id="apiKey" placeholder="sk-ant-..." autocomplete="off">
-    <span class="api-note">Your key stays in your browser only</span>
+    <input type="password" id="apiKey" placeholder="sk-ant-... (paste once, saved automatically)" autocomplete="off">
+    <span id="apiKeyStatus"></span>
+    <button id="forgetKeyBtn" class="forget-btn">Forget Key</button>
   </div>
 
-  <!-- masthead / hero header -->
+  <!-- ── MASTHEAD ── -->
   <header class="masthead">
     <div class="mast-topbar">
       <span>Climate Intelligence — Daily Edition</span>
@@ -38,7 +39,7 @@
     </div>
   </header>
 
-  <!-- quick climate facts strip -->
+  <!-- ── FACT STRIP ── -->
   <div class="fact-strip">
     <div class="fact-card fc-1">
       <span class="fact-icon">🍔</span>
@@ -67,12 +68,15 @@
     </div>
   </div>
 
-  <!-- main input area -->
+  <!-- ── INPUT SECTION ── -->
   <div class="input-wrap">
     <div class="input-left">
       <div class="section-kicker">Track your impact</div>
       <h2 class="input-headline">Describe your day</h2>
-      <p class="input-desc">What did you eat, how did you travel, what did you use at home? Write it naturally — we'll figure out the carbon math.</p>
+      <p class="input-desc">
+        What did you eat, how did you travel, what did you use at home?
+        Write it naturally — we'll figure out the carbon math.
+      </p>
       <textarea id="dayInput" placeholder="e.g. I drove 15km to college, had a chicken burger for lunch, kept the AC on for 4 hours, streamed Netflix for 2 hours and ordered food online..."></textarea>
       <div class="error-box" id="errorBox"></div>
       <button class="analyse-btn" id="analyseBtn" onclick="analyseDay()">
@@ -97,7 +101,7 @@
     </div>
   </div>
 
-  <!-- loading state -->
+  <!-- ── LOADING ── -->
   <div id="loadingSection">
     <div class="loading-inner">
       <p class="loading-title">Calculating your footprint...</p>
@@ -110,9 +114,10 @@
     </div>
   </div>
 
-  <!-- results — hidden until we have data -->
+  <!-- ── RESULTS ── -->
   <div id="resultsSection">
 
+    <!-- Total hero -->
     <div class="total-hero">
       <div class="total-left">
         <p class="kicker">Your total for today</p>
@@ -126,11 +131,13 @@
       </div>
     </div>
 
+    <!-- Activity breakdown -->
     <div class="breakdown-section">
       <h2>Activity Breakdown</h2>
       <div class="breakdown-grid" id="breakdownGrid"></div>
     </div>
 
+    <!-- At-home tips -->
     <div class="tips-section">
       <div class="tips-header">
         <h2>At Home — What You Can Do</h2>
@@ -139,6 +146,7 @@
       <div class="tips-grid" id="homeTips"></div>
     </div>
 
+    <!-- Local area tips -->
     <div class="tips-section">
       <div class="tips-header">
         <h2>In Your Area — Local Actions</h2>
@@ -149,7 +157,7 @@
 
   </div>
 
-  <!-- scrolling ticker at the bottom -->
+  <!-- ── TICKER FOOTER ── -->
   <div class="ticker-footer">
     <div class="ticker-label">Climate Facts</div>
     <div class="ticker-track">
@@ -157,7 +165,9 @@
     </div>
   </div>
 
-  <footer>CO₂ Tracker · Emission factors based on IPCC &amp; IEA data · For awareness purposes only · 2025</footer>
+  <footer>
+    CO₂ Tracker · Emission factors based on IPCC &amp; IEA data · For awareness purposes only · 2025
+  </footer>
 
   <script src="app.js"></script>
 </body>
