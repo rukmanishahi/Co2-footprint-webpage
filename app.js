@@ -1,7 +1,5 @@
-// CO2 Tracker — main script
-// Handles the ticker, API call, and rendering results.
 
-// set today's date in the header
+// set today's date
 const dateEl = document.getElementById('todayDate');
 dateEl.textContent = new Date().toLocaleDateString('en-IN', {
   weekday: 'long',
@@ -9,12 +7,6 @@ dateEl.textContent = new Date().toLocaleDateString('en-IN', {
   month: 'long',
   day: 'numeric'
 });
-
-
-// -------------------------------------------------------
-// Ticker — duplicate the facts array so the loop is seamless
-// -------------------------------------------------------
-
 const tickerFacts = [
   "🌡️ The last decade was the hottest on record",
   "🌊 Sea levels are rising ~3.7mm per year globally",
@@ -38,11 +30,6 @@ const tickerEl = document.getElementById('tickerInner');
   tickerEl.appendChild(item);
 });
 
-
-// -------------------------------------------------------
-// Chart — keep a reference so we can destroy it on re-runs
-// -------------------------------------------------------
-
 let chartInstance = null;
 
 // A pastel palette that matches the site's colour scheme
@@ -54,7 +41,7 @@ const chartPalette = [
 
 
 // -------------------------------------------------------
-// Main function — called when the user clicks Analyse
+// Main function
 // -------------------------------------------------------
 
 async function analyseDay() {
