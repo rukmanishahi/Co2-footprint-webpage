@@ -2,6 +2,8 @@
 
 A magazine-style web app that calculates your daily carbon footprint from a plain English description of your day.
 
+https://rukmanishahi.github.io/Co2-footprint-webpage-withClaude/
+
 ## How it works
 Type what you did today — what you ate, how you travelled, what you used at home — and the app breaks down your CO₂ emissions activity by activity, gives you a colour-coded verdict, a donut chart, and personalised tips to reduce your impact.
 
